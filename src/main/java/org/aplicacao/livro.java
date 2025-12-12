@@ -67,6 +67,11 @@ public class livro implements publicacao {
     }
 
     public int getTotpag() {
+        switch (getTotpag()){
+            case 1:
+                System.out.println();
+        }
+
         return totpag;
     }
 

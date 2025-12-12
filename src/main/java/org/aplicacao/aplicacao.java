@@ -11,6 +11,8 @@ public class aplicacao {
         l[1] = new livro("Diario de Anne Frank", p[1], 244, "Anne Frank");
         l[2] = new livro("Os misterios do Universo", p[0], 200,"Jerffeson");
 
+        l[0].abrir();
+        l[0].folhear( 102);
         System.out.println(l[0].detalhes());
     }
 }
