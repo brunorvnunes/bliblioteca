@@ -1,6 +1,6 @@
 package org.aplicacao;
 @SuppressWarnings("all")
-public class livro {
+public class livro implements publicacao {
     private String titulo;
     private String autor;
     private int totpag;
@@ -19,11 +19,30 @@ public class livro {
                 ", leitor='" + leitor + '\'' +
                 '}';
     }
-    public livro(String titulo, String leitor, int totpag, String autor) {
+
+    public livro(String titulo, pessoa leitor, int totpag, String autor) {
         this.titulo = titulo;
-        this.leitor = leitor;
+        this.leitor = String.valueOf(leitor);
+        this.aberto = false;
+        this.pagAtual = 0;
         this.totpag = totpag;
         this.autor = autor;
+    }
+
+    public int getPagAtual() {
+        return pagAtual;
+    }
+
+    public void setPagAtual(int pagAtual) {
+        this.pagAtual = pagAtual;
+    }
+
+    public boolean isAberto() {
+        return aberto;
+    }
+
+    public void setAberto(boolean aberto) {
+        this.aberto = aberto;
     }
 
     public String getLeitor() {
@@ -58,4 +77,28 @@ public class livro {
         this.totpag = totpag;
     }
 
+    @Override
+    public void abrir() {
+        this.setAberto(true);
+    }
+
+    @Override
+    public void fechar() {
+        this.setAberto(false);
+    }
+
+    @Override
+    public void folhear(int p) {
+        this.pagAtual = p;
+    }
+
+    @Override
+    public void avancarPag() {
+        this.pagAtual++;
+    }
+
+    @Override
+    public void voltarPag() {
+        this.pagAtual--;
+    }
 }
