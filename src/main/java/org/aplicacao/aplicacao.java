@@ -13,6 +13,7 @@ public class aplicacao {
 
         l[0].abrir();
         l[0].folhear( 102);
+        l[0].fechar();
         System.out.println(l[0].detalhes());
     }
 }

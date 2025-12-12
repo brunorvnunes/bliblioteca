@@ -6,5 +6,5 @@ public interface publicacao {
     public void folhear(int p);
     public void avancarPag();
     public void voltarPag();
-
+    public int getTotPag();
 }

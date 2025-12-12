@@ -1,6 +1,6 @@
 package org.aplicacao;
 @SuppressWarnings("all")
-public class livro implements publicacao {
+    public class livro implements publicacao {
     private String titulo;
     private String autor;
     private int totpag;
@@ -68,8 +68,7 @@ public class livro implements publicacao {
 
     public int getTotpag() {
         switch (getTotpag()){
-            case 1:
-                System.out.println();
+
         }
 
         return totpag;
@@ -91,8 +90,14 @@ public class livro implements publicacao {
 
     @Override
     public void folhear(int p) {
-        this.pagAtual = p;
-    }
+            if (p <= this.getTotPag() && isAberto()) {
+                this.setPagAtual(p);
+            } else if (!isAberto()) {
+                System.out.println("Livro está fechado! Primeiro abrá-o");
+            } else {
+                System.out.println("Número de Páginas Incorretas!");
+            }
+        }
 
     @Override
     public void avancarPag() {
@@ -102,5 +107,10 @@ public class livro implements publicacao {
     @Override
     public void voltarPag() {
         this.pagAtual--;
+    }
+
+    @Override
+    public int getTotPag() {
+        return 0;
     }
 }
