@@ -6,6 +6,7 @@ public class pessoa {
     private String sexo;
 
 
+
     public void fazerNiver(){
         this.idade++;
     }
