@@ -6,23 +6,20 @@ public class livro implements publicacao {
     private int totpag;
     private int pagAtual;
     private boolean aberto;
-    private String leitor;
+    private pessoa leitor;
 
 
     public String detalhes() {
-        return "livro{" +
-                "titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", totpag=" + totpag +
-                ", pagAtual=" + pagAtual +
-                ", aberto=" + aberto +
-                ", leitor='" + leitor + '\'' +
-                '}';
+        return "\nlivro" + "\n Titulo = " + "'" + titulo + '\'' + "\n Autor = "
+                + "'" + autor + '\'' + "\n Totpag = " + totpag +
+                "\n PagAtual = " + pagAtual + "\n Aberto = " + aberto +
+                "\n Leitor = " + leitor.getNome() + '\'' + "\n idade = " + leitor.getIdade() + "\n sexo = "+ leitor.getSexo()+'\n';
+
     }
 
     public livro(String titulo, pessoa leitor, int totpag, String autor) {
         this.titulo = titulo;
-        this.leitor = String.valueOf(leitor);
+        this.setLeitor(leitor);
         this.aberto = false;
         this.pagAtual = 0;
         this.totpag = totpag;
@@ -45,11 +42,11 @@ public class livro implements publicacao {
         this.aberto = aberto;
     }
 
-    public String getLeitor() {
+    public pessoa getLeitor() {
         return leitor;
     }
 
-    public void setLeitor(String leitor) {
+    public void setLeitor(pessoa leitor) {
         this.leitor = leitor;
     }
 
